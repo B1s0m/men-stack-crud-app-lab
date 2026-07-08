@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:600px;
+            margin:40px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        input, textarea, select{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        textarea{
+            height:180px;
+        }
+
+        button{
+            margin-top:20px;
+            width:100%;
+            padding:12px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Create Blog</h1>
+
+    <form action="/blogs" method="POST">
+
+        <label>Title</label>
+        <input
+            type="text"
+            name="title"
+            required
+        >
+
+        <label>Author</label>
+        <input
+            type="text"
+            name="author"
+            required
+        >
+
+        <label>Category</label>
+        <select name="category">
+            <option>Technology</option>
+            <option>Programming</option>
+            <option>Education</option>
+            <option>Travel</option>
+            <option>Food</option>
+            <option>Lifestyle</option>
+            <option>Other</option>
+        </select>
+
+        <label>Image URL</label>
+        <input
+            type="text"
+            name="image"
+        >
+
+        <label>Content</label>
+        <textarea
+            name="content"
+            required
+        ></textarea>
+
+        <label>
+            <input
+                type="checkbox"
+                name="published"
+                checked
+            >
+            Published
+        </label>
+
+        <button type="submit">
+            Create Blog
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
