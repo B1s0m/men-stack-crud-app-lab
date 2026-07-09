@@ -3,61 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Createstyle.css">
     <title>Create Blog</title>
-
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background:#f4f4f4;
-        }
-
-        .container{
-            width:600px;
-            margin:40px auto;
-            background:white;
-            padding:25px;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,.2);
-        }
-
-        h1{
-            text-align:center;
-        }
-
-        label{
-            display:block;
-            margin-top:15px;
-            font-weight:bold;
-        }
-
-        input, textarea, select{
-            width:100%;
-            padding:10px;
-            margin-top:5px;
-            border:1px solid #ccc;
-            border-radius:5px;
-        }
-
-        textarea{
-            height:180px;
-        }
-
-        button{
-            margin-top:20px;
-            width:100%;
-            padding:12px;
-            background:#007bff;
-            color:white;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            font-size:16px;
-        }
-
-        button:hover{
-            background:#0056b3;
-        }
-    </style>
 
 </head>
 <body>
@@ -66,23 +13,24 @@
 
     <h1>Create Blog</h1>
 
-    <form action="/blogsViews" method="POST">
+    <form action="/blogs" method="POST">
 
-        <label>Title</label>
-        <input
+        <label for="title" >Title</label>
+        <input id="title"
             type="text"
             name="title"
             required
         >
 
-        <label>Author</label>
+        <label for="author" >Author</label>
         <input
+        id="author"
             type="text"
             name="author"
             required
         >
 
-        <label>Category</label>
+ <label  for="category" >Category</label> 
         <select name="category">
             <option>Technology</option>
             <option>Programming</option>
@@ -91,16 +39,17 @@
             <option>Food</option>
             <option>Lifestyle</option>
             <option>Other</option>
-        </select>
-
-        <label>Image URL</label>
-        <input
+        </select> 
+            <!-- <input id="category"
             type="text"
-            name="image"
-        >
+            name="category"
+            required
+        > -->
 
-        <label>Content</label>
+    
+        <label for="content">Content</label>
         <textarea
+        id="content"
             name="content"
             required
         ></textarea>

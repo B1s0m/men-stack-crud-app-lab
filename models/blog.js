@@ -33,14 +33,10 @@ const blogSchema = new mongoose.Schema(
       required: true,
     },
 
-    image: {
-      type: String,
-      default: "",
-    },
 
     published: {
       type: Boolean,
-      default: true,
+    
     },
   },
   {
@@ -48,4 +44,6 @@ const blogSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Blog", blogSchema);
+
+const Blogs=mongoose.model("Blog", blogSchema);
+module.exports = Blogs
