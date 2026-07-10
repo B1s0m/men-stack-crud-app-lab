@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="homestyle.css">
+    <link rel="stylesheet" href="navbarstyle.css">
 
 </head>
 <body>
       <%- include('./partials/navbar') %>
     <h1>Home page</h1>
      
-         
+     <div class="CardParnt" >  
      <%for (const oneBlog of BlogFound) { %>
-        <dev class="Blog">
-            <p> <%=oneBlog.title %> </p>
-            <p> <%=oneBlog.author %> </p>
-            <p> <%=oneBlog.category %> </p>
-            <p> <%=oneBlog.content %> </p>
-            <p> <%=oneBlog.published %> </p>
+    <a href="/">
+        <div class="blog-card">
+    <h2><%= oneBlog.title %></h2>
 
-            
+    <p><strong>Author:</strong> <%= oneBlog.author %></p>
 
-        </dev>
-        <%}  %>
+    <p><strong>Category:</strong> <%= oneBlog.category %></p>
+
+    <p class="status">
+        <%= oneBlog.published ? "✅ Published" : "⏳ Draft" %>
+    </p>
+    <!-- <p><%= oneBlog.content %></p> -->
+</div>
+</a>
+<%}  %>
+</div>  
 </body>
 </html>

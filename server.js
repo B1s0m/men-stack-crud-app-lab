@@ -1,15 +1,20 @@
 const express = require("express") //importing express package
 const app = express() // creates a express application
- const connectToDatabasef=require("./db")
+const connectToDatabasef=require("./db")
 const mongoose = require("mongoose");
-
-  const Blog=require('./models/blog')
+const Blog=require('./models/blog')
+const DataBlog=require("./models/dataBlogs")
 app.use(express.static('public')) // serves all static files from public folder
-
-connectToDatabasef.connectToDatabase()
 
 app.use(express.static('public')); //all static files are in the public folder
 app.use(express.urlencoded({ extended: false }));
+
+
+connectToDatabasef.connectToDatabase()
+
+
+
+// DataBlog.sendData()
 
 
 
