@@ -7,7 +7,6 @@ const DataBlog = require("./models/dataBlogs");
 const { render } = require("ejs");
 app.use(express.static('public')) // serves all static files from public folder
 
-app.use(express.static('public')); //all static files are in the public folder
 app.use(express.urlencoded({ extended: false }));
 
 
