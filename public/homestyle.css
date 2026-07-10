@@ -11,18 +11,23 @@ h1{
 }
 
 .CardParnt {
-   margin: 30px auto;
-  display: flex;
-  /* align-items:center; */
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content:space-between;
-  width:1000px;
-  /* border:5px solid blue; ; */
-   /* background:    #e2e8f0; */
+    margin: 30px auto;
+    display: flex;
+    /* align-items:center; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    width:1000px;
+    /* border:5px solid blue; ; */
+    /* background:    #e2e8f0; */
+    
+    
+    
+}
 
-
-  
+.CardParnt a {
+   text-decoration: none;
+   width: 30%;
 }
 
 .blog-card {
@@ -69,7 +74,4 @@ color: #92400e;
 
 
 
-    .CardParnt a {
-    text-decoration: none;
-    width: 30%;
-}
+   

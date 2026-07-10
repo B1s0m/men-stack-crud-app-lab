@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datiles Blog</title>
+    <link rel="stylesheet" href="navbarstyle.css">
+    <link rel="stylesheet" href="datilesBlogstyle.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+        <div class="container">
+            <h1>
+                <%= Blog.title %>
+            </h1>
+            <div class="Acp">
+                <p><strong>Author:</strong>
+                    <%= Blog.author %>
+                </p>
+                <p><strong>Category:</strong>
+                    <%= Blog.category %>
+                </p>
+
+                <% if(Blog.published ){%>
+                    <p id="status" class="Published">
+                        Published
+                    </p>
+                    <% }else { %>
+                        <p id="status" class="Draft">
+                            Draft
+                        </p>
+                        <% } %>
+
+            </div>
+            <p>
+                <%= Blog.content %>
+            </p>
+
+            <div class="button-group">
+                <button class="delete-btn">Delete</button>
+                <button class="update-btn">Update</button>
+            </div>
+        </div>
+</body>
+
+</html>

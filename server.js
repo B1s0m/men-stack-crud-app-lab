@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 connectToDatabasef.connectToDatabase()
 
 
-
+ // this for add data in database
 // DataBlog.sendData()
 
 
@@ -32,8 +32,23 @@ app.get('/', async(req,res)=>{
 
 
 app.get('/createBlog',(req,res)=>{
-    res.render('createBlog.ejs') // never add / in beggening of render method
+    res.render('createBlog.ejs') 
 })
+
+app.get('/:id', async(req,res)=>{
+    try {
+        console.log(req.params.id)
+
+        oneBlogFound=await Blog.findById(req.params.id)
+        console.log(oneBlogFound)
+        res.render('datilesBlog.ejs',{Blog:oneBlogFound})  
+        
+
+    } catch (error) {
+        console.log("error in found Blogs"+error)
+    }
+})
+
 
 
 app.post('/blogs', async (req,res)=>{
@@ -52,6 +67,7 @@ app.post('/blogs', async (req,res)=>{
         console.log(err)
     }
     
+   
 })
 
 
