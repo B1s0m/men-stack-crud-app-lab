@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datiles Blog</title>
-    <link rel="stylesheet" href="navbarstyle.css">
-    <link rel="stylesheet" href="datilesBlogstyle.css">
+    <link rel="stylesheet" href="/navbarstyle.css">
+    <link rel="stylesheet" href="/datilesBlogstyle.css">
 </head>
 
 <body>
@@ -39,9 +39,9 @@
             </p>
 
             <div class="button-group">
-                <form action="/<%= Blog._id %>/delete" method="post"> <button   class="delete-btn">Delete</button>
+                <form action="/view/<%= Blog._id %>/delete" method="post"> <button   class="delete-btn">Delete</button>
                 </form>
-                <form action="/<%= Blog._id %>/update" method="get"> <button class="update-btn">Update</button>
+                <form action="/view/<%= Blog._id %>/update" method="get"> <button class="update-btn">Update</button>
                 </form>
             </div>
         </div>

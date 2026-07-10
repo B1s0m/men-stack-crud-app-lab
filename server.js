@@ -19,7 +19,7 @@ connectToDatabasef.connectToDatabase()
 
 
 
-app.get('/', async (req, res) => {
+app.get('/view', async (req, res) => {
     try {
         BlogFound = await Blog.find()
         res.render('homepage.ejs', { BlogFound })
@@ -34,7 +34,7 @@ app.get('/createBlog', (req, res) => {
 })
 
 
-app.get('/:id', async (req, res) => {
+app.get('/view/:id', async (req, res) => {
     try {
         oneBlogFound = await Blog.findById(req.params.id)
         res.render('datilesBlog.ejs', { Blog: oneBlogFound })
@@ -45,11 +45,11 @@ app.get('/:id', async (req, res) => {
 
 
 
-app.post('/:id/delete', async (req, res) => {
+app.post('/view/:id/delete', async (req, res) => {
 
     try {
         const deleteBlog = await Blog.findByIdAndDelete(req.params.id)
-        res.redirect('/')
+        res.redirect('/view')
     }
     catch (err) {
         console.log("Delete Problem : " + err)
@@ -58,7 +58,7 @@ app.post('/:id/delete', async (req, res) => {
 
 })
 
-app.get('/:id/update', async (req, res) => {
+app.get('/view/:id/update', async (req, res) => {
 
 
     console.log(req.params.id);
@@ -81,7 +81,7 @@ app.post('/blogs', async (req, res) => {
 
         const createdBlog = await Blog.create(req.body)
         // console.log(createdBlog._id)
-        res.redirect('/')
+        res.redirect('/view')
 
     }
     catch (err) {
@@ -99,7 +99,7 @@ app.post('/blogs/update/:id', async (req, res) => {
          console.log(req.body);
     const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body)
         // console.log(createdBlog._id)
-        res.redirect('/')
+        res.redirect('/view')
 
     }
     catch (err) {
