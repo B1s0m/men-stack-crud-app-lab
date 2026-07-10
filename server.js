@@ -13,8 +13,16 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
-app.get('/',(req,res)=>{
-    res.render('homepage.ejs')
+app.get('/', async(req,res)=>{
+    try {
+        
+        BlogFound=await Blog.find()
+        // console.log(BlogFound)
+        res.render('homepage.ejs',{BlogFound})
+
+    } catch (error) {
+        console.log("error in found Blogs"+error)
+    }
 })
 
 
