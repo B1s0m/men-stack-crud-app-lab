@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
         BlogFound = await Blog.find()
         res.render('homepage.ejs', { BlogFound })
     } catch (error) {
-        console.log("error in found Blogs" + error)
+        console.log("error in found Blogs " + error)
     }
 })
 
@@ -97,13 +97,13 @@ app.post('/blogs/update/:id', async (req, res) => {
         req.body.published = Boolean(req.body.published)
         // console.log( req.body.published)
          console.log(req.body);
-        // const createdBlog = await Blog.create(req.body)
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body)
         // console.log(createdBlog._id)
         res.redirect('/')
 
     }
     catch (err) {
-        console.log(err)
+        console.log("this error in Update  "+err)
     }
 
 

@@ -19,7 +19,7 @@
                 <%= Blog ? "Update Blog" : "Create Blog" %>
             </h1>
 
-            <form action="/blogs <%= Blog ? '/update/'+Blog._id :''  %> " method="POST">
+            <form action="/blogs<%= Blog ?'/update/'+Blog._id :''%> " method="POST">
 
                 <label for="title">Title</label>
                 <input id="title" type="text" name="title" required value="<%= Blog ? Blog.title  :''  %>">
