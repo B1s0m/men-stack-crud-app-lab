@@ -39,8 +39,10 @@
             </p>
 
             <div class="button-group">
-                <button class="delete-btn">Delete</button>
-                <button class="update-btn">Update</button>
+                <form action="/<%= Blog._id %>/delete" method="post"> <button   class="delete-btn">Delete</button>
+                </form>
+                <form action="/<%= Blog._id %>/update" method="get"> <button class="update-btn">Update</button>
+                </form>
             </div>
         </div>
 </body>
