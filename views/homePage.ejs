@@ -14,17 +14,24 @@
      
      <div class="CardParnt" >  
      <%for (const oneBlog of BlogFound) { %>
-    <a href="/">
+    <a href="/createBlog">
         <div class="blog-card">
     <h2><%= oneBlog.title %></h2>
 
     <p><strong>Author:</strong> <%= oneBlog.author %></p>
 
     <p><strong>Category:</strong> <%= oneBlog.category %></p>
-
-    <p class="status">
-        <%= oneBlog.published ? "✅ Published" : "⏳ Draft" %>
+    
+      <% if(oneBlog.published ){%>
+    <p  id="status"   class="Published">
+        Published  
     </p>
+     <% }else { %>
+         <p id="status"   class="Draft">
+        Draft  
+    </p> 
+    <% } %>
+
     <!-- <p><%= oneBlog.content %></p> -->
 </div>
 </a>
